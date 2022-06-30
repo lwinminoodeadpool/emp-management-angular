@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   
   btnRegister(f:NgForm){
     console.log("gg")
-    this.server.postRegister(this.registerName,this.registerEmail,this.registerPassword).subscribe(data => {
+    this.server.postRegister(this.registerName,this.registerEmail,this.registerPassword).subscribe((data: any) => {
       console.log(data)
       alert("Successfully registered")
       f.reset()

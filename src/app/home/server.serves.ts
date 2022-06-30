@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { UrlHandlingStrategy } from "@angular/router";
 
 @Injectable()
 
@@ -25,11 +26,11 @@ export class ServerServices{
     }
 
     deleteEmp(objectId:string){
-        const formData = new FormData();
-        formData.append('ID', objectId);
+        //const formData = new FormData();
+        //formData.append('ID', objectId);
         return this.http.post(
             'https://api.backendless.com/1C2448EC-1588-C063-FFD4-BB54E0147200/93B04720-7FC5-492A-9BDC-F601D03D645F/services/Employee/delEmp',
-            formData,
+            objectId,
             this.httpOptions
         );
     }

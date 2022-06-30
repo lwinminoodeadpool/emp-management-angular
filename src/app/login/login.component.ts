@@ -17,9 +17,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-
     console.log("wtf")
-    this.server.getLogin(this.username, this.password).subscribe((data) => {
+    this.server.getLogin(this.username, this.password).subscribe((data: any) => {
 
       console.log(data)
 

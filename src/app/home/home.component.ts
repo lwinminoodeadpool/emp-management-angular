@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate([''])
       return
     }
-    this.server.getServers().subscribe(data => {
+    this.server.getServers().subscribe((data: any) => {
       this.employees = data
       console.log(data)
 
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   onDelete(objectId: string) {
     console.log("click")
-    this.server.deleteEmp(objectId).subscribe(data => {
+    this.server.deleteEmp(objectId).subscribe((data: any) => {
       console.log(data)
     })
   }
