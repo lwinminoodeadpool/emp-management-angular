@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   onDelete(objectId: string) {
     console.log("click")
     this.server.deleteEmp(objectId).subscribe((data: any) => {
-      console.log(data)
+      if(data.status && data.status === "Success") location.reload();
     })
   }
 
