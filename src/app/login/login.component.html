@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4">
+            <app-navi></app-navi>
+        </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form (ngSubmit)="onSubmit()" #g="ngForm">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="loginName">Email</label>
+                  <input type="email" id="loginName" class="form-control" ngModel name="loginname" required #loginName="ngModel" [(ngModel)] ="username"/>
+                  <span class="help-block" *ngIf="!loginName.valid && loginName.touched">Please enter login Email</span>
+
+                  
+                </div>
+          
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="loginPassword">Password</label>
+                  <input type="password" id="loginPassword" class="form-control" ngModel name="loginpassword" required #loginPassword="ngModel" [(ngModel)] ="password"/>
+                  <span class="help-block" *ngIf="!loginPassword.valid && loginPassword.touched">Please enter Password</span>
+                </div>
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!g.valid" >Sign in</button>
+  
+              </form>
+        </div>
+    </div>
+  </div>
+  

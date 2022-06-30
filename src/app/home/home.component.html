@@ -1,0 +1,52 @@
+<body>
+  <div class="container-xl">
+    <!-- header -->
+    <div class="row" id="header">
+      <div class="col-md-8">
+        <h1>Manage <b>Employess</b></h1>
+      </div>
+      <div class="col-md-4">
+        <a href="" class="btn btn-success mt-2" data-toggle="modal" routerLink="/addemp" ><span>Add New Employee</span></a>
+        <a href="" class="btn btn-primary mt-2" data-toggle="modal" (click)="getLogout()"><span>Log Out</span></a>
+        <!-- <button (click)="onGet()">Click</button> -->
+        
+    </div>
+    </div>
+    <!-- table -->
+    <div class="row" id="table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">User Role</th>
+            <th scope="col">Deparment</th>
+            <th scope="col">User Region</th>
+            <th scope="col">User Township</th>
+            <!-- <th scope="col">Created Date</th>
+            <th scope="col">Upadated Date</th> -->
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Employee of employees" >
+            <th scope="row">{{Employee.ID}}</th>
+            <td >{{Employee.Name}}</td>
+            <td >{{Employee.Email}}</td>
+            <td>{{Employee.UserRole}}</td>
+            <td>{{Employee.department}}</td>
+            <td>{{Employee.UserRegion}}</td>
+            <td>{{Employee.Township}}</td>
+            
+            <td>
+              <button class="edit" data-toggle="modal">Edit</button> <br>
+              <button class="delete" (click)="onDelete(Employee.objectId)">Delete</button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
